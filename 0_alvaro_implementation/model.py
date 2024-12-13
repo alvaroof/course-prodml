@@ -60,4 +60,6 @@ def evaluate_model(model, X_test, y_test):
     return model.score(X_test, y_test)
 
 def save_model(model):
+    import os
+    os.makedirs('models', exist_ok=True)
     pk.dump(model, open('models/rf_v1', 'wb'))
