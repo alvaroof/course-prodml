@@ -3,6 +3,7 @@ from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.ensemble import RandomForestRegressor
 import pickle as pk
 from preparation import prepare_data
+from config import settings
 
 def build_model():
     # to train and then save the model we need:
@@ -61,5 +62,5 @@ def evaluate_model(model, X_test, y_test):
 
 def save_model(model):
     import os
-    os.makedirs('models', exist_ok=True)
-    pk.dump(model, open('models/rf_v1', 'wb'))
+    os.makedirs(f'{settings.model_path}', exist_ok=True)
+    pk.dump(model, open(f'{settings.model_path}/{settings.model_name}', 'wb'))
