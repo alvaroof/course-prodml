@@ -1,8 +1,8 @@
 from pathlib import Path
 import pickle as pk
 
-from model import build_model
-from config import settings
+from model.pipeline.model import build_model
+from config.config import settings
 from loguru import logger
 
 class ModelService:

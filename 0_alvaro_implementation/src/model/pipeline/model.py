@@ -2,10 +2,10 @@
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.ensemble import RandomForestRegressor
 import pickle as pk
-from preparation import prepare_data
+from model.pipeline.preparation import prepare_data
 from loguru import logger
 
-from config import settings
+from config.config import settings
 
 def build_model():
     
